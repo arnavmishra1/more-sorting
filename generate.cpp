@@ -12,10 +12,13 @@ using namespace std;
 
 int main(int args, char *arglist[]) {
     if (args != 4) {
-        cout << "Usage: generate [count] [min] [max]" << endl;
+        cout << "Usage: generate [length] [min] [max]" << endl;
     } else {
-        //program
-        
+        int length = stoi(arglist[1]);
+        int min = stoi(arglist[2]);
+        int max = stoi(arglist[3]);
+        int x = rand() % (max - min + 1) + min;
+        cout << x << endl;
     }
 
     return 0;
