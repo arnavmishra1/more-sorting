@@ -5,7 +5,7 @@
 # $ sortrace.sh >> sortrace.log & # this may take an hour
 echo Generating 1000000 random numbers
 sleep 1
-generate 1000000 -100000 100000 # you have to write generate.cpp
+generate 10000 -100000 100000 # you have to write generate.cpp
 sleep 1
 echo Starting system sort
 sleep 1

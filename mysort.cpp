@@ -25,7 +25,7 @@ int main(int args, char *argv[]) {
     // read file and get size
     ifstream input(argv[1]);
     string temp;
-    int numbers[100];
+    int numbers[1000000];
     int size = 0;
     while (getline(input, temp)) {
         numbers[size] = stoi(temp);
