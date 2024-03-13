@@ -25,16 +25,11 @@ int main(int args, char *argv[]) {
     // read file and get size
     ifstream input(argv[1]);
     string temp;
+    int numbers[100];
     int size = 0;
-    while(getline(input, temp)) {
+    while (getline(input, temp)) {
+        numbers[size] = stoi(temp);
         size++;
-    }
-
-    // create and fill array
-    int numbers[size];
-    int i = 0;
-    while(getline(input, temp)) {
-        numbers[i] = stoi(temp);
     }
     input.close();
 
