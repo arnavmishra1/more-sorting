@@ -13,18 +13,19 @@
 using namespace std;
 
 int main(int args, char *argv[]) {
+    // check for correct usage
     if (args != 4) {
-        cout << "Usage: generate [length] [min] [max]" << endl;
+        cout << "Usage: generate [count] [min] [max]" << endl;
     } else {
-        int length = stoi(argv[1]);
+        // argument variables
+        int count = stoi(argv[1]);
         int min = stoi(argv[2]);
         int max = stoi(argv[3]);
 
-        int numbers[length];
-
+        // generate random numbers and add to array
         srand(time(NULL));
-
-        for (int i = 0; i < length; i++) {
+        int numbers[count];
+        for (int i = 0; i < count; i++) {
             numbers[i] = rand() % (max - min + 1) + min;
         }
 
