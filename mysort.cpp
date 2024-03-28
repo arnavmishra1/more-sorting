@@ -50,6 +50,10 @@ void merge(int a[], int asize, int b[], int bsize) {
         k++;
     }
 
+    // copy sorted back into original arrays
+    copy(temp, temp + asize, a);
+	copy(temp + asize, temp + asize + bsize, b);
+
 }
 
 struct sortStuff {
@@ -63,8 +67,8 @@ void* bridge(void* ptr) {
 }
 
 int main(int args, char *argv[]) {
-
-    int* numbers = new int[1000000]; // dynamic meme-ory!!
+    // dynamic meme-ory!!
+    int* numbers = new int[1000000];
 
     // read file and get size
     ifstream input(argv[1]);
@@ -123,6 +127,18 @@ int main(int args, char *argv[]) {
     pthread_join(t7, NULL);
 
     // merge threads together, two at a time
+    cout << "ss0.size: " << ss0.size << endl;
+    merge(ss0.start, ss0.size, ss1.start, ss1.size);
+    merge(ss2.start, ss2.size, ss3.start, ss3.size);
+    merge(ss4.start, ss4.size, ss5.start, ss5.size);
+    merge(ss6.start, ss6.size, ss7.start, ss7.size);
+
+    cout << "ss0.size2: " << ss0.size << endl;
+    merge(ss0.start, ss0.size, ss2.start, ss2.size);
+    merge(ss4.start, ss4.size, ss6.start, ss6.size);
+
+    cout << "ss0.size3: " << ss0.size << endl;
+    merge(ss0.start, ss0.size, ss4.start, ss4.size);
 
     // run bubble sort function
     // bubble(numbers, size); <-- old michael buble sort
@@ -132,6 +148,8 @@ int main(int args, char *argv[]) {
     for (int i = 0; i < size; i++) {
         output << numbers[i] << endl;
     }
+
+    delete[] numbers;
 
     return 0;
 }
