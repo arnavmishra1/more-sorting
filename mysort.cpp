@@ -25,8 +25,8 @@ void bubble(int A[], int size) {
 void merge(int a[], int asize, int b[], int bsize) {
     int temp[asize + bsize];
 
+    // merge sort function
     int i, j, k = 0;
-
     while (i < asize && j < bsize) {
         if (a[i] <= b[j]) {
             temp[k] = a[i];
@@ -37,6 +37,19 @@ void merge(int a[], int asize, int b[], int bsize) {
         }
         k++;
     }
+
+    // since merge function terminates when one list has been "emptied", fill temp with the rest of the other list
+    while (i < asize) {
+        temp[k] = a[i];
+        i++;
+        k++;
+    }
+    while (j < bsize) {
+        temp[k] = b[j];
+        j++;
+        k++;
+    }
+
 }
 
 struct sortStuff {
