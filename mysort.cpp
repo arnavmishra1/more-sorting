@@ -134,11 +134,11 @@ int main(int args, char *argv[]) {
     merge(ss6.start, ss6.size, ss7.start, ss7.size);
 
     cout << "ss0.size2: " << ss0.size << endl;
-    merge(ss0.start, ss0.size, ss2.start, ss2.size);
-    merge(ss4.start, ss4.size, ss6.start, ss6.size);
+    merge(ss0.start, 250000, ss2.start, 250000);
+    merge(ss4.start, 250000, ss6.start, 250000);
 
     cout << "ss0.size3: " << ss0.size << endl;
-    merge(ss0.start, ss0.size, ss4.start, ss4.size);
+    merge(ss0.start, 500000, ss4.start, 500000);
 
     // run bubble sort function
     // bubble(numbers, size); <-- old michael buble sort
