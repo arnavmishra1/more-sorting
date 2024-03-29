@@ -1,14 +1,11 @@
 Generating 1000000 random numbers
 Starting system sort
 
-real	0m2.549s
-user	0m2.303s
-sys	0m0.137s
+real	0m2.402s
+user	0m2.255s
+sys	0m0.106s
 Starting mysort
-ss0.size: 125000
-./sortrace.sh: line 16:  3525 Segmentation fault: 11  ./mysort numbers.dat mysort.out
 
-real	5m20.942s
-user	12m21.752s
-sys	0m6.508s
-sort: No such file or directory
+real	3m7.875s
+user	12m6.190s
+sys	0m0.882s

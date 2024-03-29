@@ -32,7 +32,7 @@ int main(int args, char *argv[]) {
         //write to file
         ofstream file("numbers.dat");
         for (int a : numbers) {
-            file << a << endl;
+            file << a << "\n";
         }
         file.close();
         

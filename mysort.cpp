@@ -49,13 +49,13 @@ void merge(int a[], int asize, int b[], int bsize) {
         j++;
         k++;
     }
-    cout << "successful merge" << endl;
+    //cout << "successful merge" << endl;
 
     // copy sorted back into original arrays
     copy(temp, temp + asize, a);
 	copy(temp + asize, temp + asize + bsize, b);
 
-    cout << "successful copy" << endl;
+    //cout << "successful copy" << endl;
 
 }
 
@@ -130,16 +130,17 @@ int main(int args, char *argv[]) {
     pthread_join(t7, NULL);
 
     // merge threads together, two at a time
-    cout << "starts: " << ss0.start << " - " << ss1.start << " ... sizes: " << ss0.size << " - " << ss1.size << endl;
+    // debugifying
+    // cout << "starts: " << ss0.start << " - " << ss1.start << " ... sizes: " << ss0.size << " - " << ss1.size << endl;
     merge(ss0.start, ss0.size, ss1.start, ss1.size);
-    /*merge(ss2.start, ss2.size, ss3.start, ss3.size);
+    merge(ss2.start, ss2.size, ss3.start, ss3.size);
     merge(ss4.start, ss4.size, ss5.start, ss5.size);
     merge(ss6.start, ss6.size, ss7.start, ss7.size);
 
     merge(ss0.start, 250000, ss2.start, 250000);
     merge(ss4.start, 250000, ss6.start, 250000);
 
-    merge(ss0.start, 500000, ss4.start, 500000);*/
+    merge(ss0.start, 500000, ss4.start, 500000);
 
     // run bubble sort function
     // bubble(numbers, size); <-- old michael buble sort
@@ -147,7 +148,7 @@ int main(int args, char *argv[]) {
     // write to output file
     ofstream output(argv[2]);
     for (int i = 0; i < size; i++) {
-        output << numbers[i] << endl;
+        output << numbers[i] << "\n";
     }
 
     delete[] numbers;
